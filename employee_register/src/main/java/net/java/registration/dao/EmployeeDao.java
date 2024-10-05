@@ -9,7 +9,7 @@ public class EmployeeDao {
 	
 	public int registerEmployee(Employee employee) throws ClassNotFoundException{
 		
-		String query = "INSERT INTO EMPLOYEE(id, firstname,lastname, username,  password, address,  contact) VALUES(?, ?, ?, ?, ?, ?, ?)";
+		String query = "INSERT INTO EMPLOYEE(firstname,lastname, username,  password, address,  contact) VALUES(?, ?, ?, ?, ?, ?, ?)";
 		
 		int result = 0;
 		
@@ -19,13 +19,13 @@ public class EmployeeDao {
 			
 			PreparedStatement stmt = con.prepareStatement(query);
 			
-			stmt.setInt(1, 1);
-			stmt.setString(2, employee.getFirstname());
-			stmt.setString(3, employee.getLastname());
-			stmt.setString(4, employee.getUsername());
-			stmt.setString(5, employee.getPassword());
-			stmt.setString(6, employee.getAddress());
-			stmt.setString(7, employee.getContact());
+			
+			stmt.setString(1, employee.getFirstname());
+			stmt.setString(2, employee.getLastname());
+			stmt.setString(3, employee.getUsername());
+			stmt.setString(4, employee.getPassword());
+			stmt.setString(5, employee.getAddress());
+			stmt.setString(6, employee.getContact());
 			
 			System.out.print(stmt);
 			
